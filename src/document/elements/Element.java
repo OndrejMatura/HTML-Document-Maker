@@ -4,16 +4,13 @@ import java.util.ArrayList;
 
 public abstract class Element {
 
-    private ElementType type;
     private Element parent;
-
-    public String getTagName() {
-        return type.name();
-    }
     
-    public Element parent() {
+    public Element getParent() {
         return parent;
     }
+    
+    public abstract String getTagName();
     
     public abstract int childrenCount();
 

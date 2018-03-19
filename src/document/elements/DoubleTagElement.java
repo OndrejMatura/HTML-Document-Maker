@@ -2,7 +2,7 @@ package document.elements;
 
 import java.util.ArrayList;
 
-public class DoubleTagElement extends Element {
+public abstract class DoubleTagElement extends Element {
 
     private static final String OPENING_TAG = "<%s>";
     private static final String CLOSING_TAG = "</%s>";

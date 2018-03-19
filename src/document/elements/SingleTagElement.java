@@ -2,7 +2,7 @@ package document.elements;
 
 import java.util.ArrayList;
 
-public class SingleTagElement extends Element {
+public abstract class SingleTagElement extends Element {
 
     private static final String TAG = "<%s/>";
     
