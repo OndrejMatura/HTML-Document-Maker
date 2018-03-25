@@ -1,14 +1,20 @@
 package document.elements;
 
-import java.util.ArrayList;
-
 public abstract class SingleTagElement extends Element {
 
     private static final String TAG = "<%s/>";
     
     @Override
-    public ArrayList<Element> children() {
-        return new ArrayList<>();
+    public void appendChild(Element element) {
+    }
+    
+    @Override
+    public void removeChildren() {
+    }
+    
+    @Override
+    public Children getChildren() {
+        return new Children();
     }
     
     @Override

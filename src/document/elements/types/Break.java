@@ -1,8 +1,10 @@
-package document.elements;
+package document.elements.types;
+
+import document.elements.SingleTagElement;
 
 public class Break extends SingleTagElement {
 
-    private static final String TAG_NAME = "br";
+    public static final String TAG_NAME = "br";
 
     @Override
     public String getTagName() {

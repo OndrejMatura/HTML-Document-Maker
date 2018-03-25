@@ -1,8 +1,10 @@
-package document.elements;
+package document.elements.types;
+
+import document.elements.DoubleTagElement;
 
 public class Paragraph extends DoubleTagElement {
 
-    private static final String TAG_NAME = "p";
+    public static final String TAG_NAME = "p";
 
     @Override
     public String getTagName() {

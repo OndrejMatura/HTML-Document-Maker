@@ -1,22 +1,34 @@
 package document.elements;
 
-import java.util.ArrayList;
-
 public abstract class Element {
 
     private Element parent;
-    
+
     public Element getParent() {
         return parent;
     }
-    
-    public abstract String getTagName();
-    
+
+    protected void setParent(Element element) {
+        parent = element;
+    }
+
+    public void setText(String text) {
+    }
+
+    public void appendText(String text) {
+    }
+
+    public abstract void appendChild(Element element);
+
+    public abstract void removeChildren();
+
     public abstract int childrenCount();
 
-    public abstract ArrayList<Element> children();
+    public abstract Children getChildren();
 
     @Override
     public abstract String toString();
-    
+
+    public abstract String getTagName();
+
 }

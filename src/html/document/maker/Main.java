@@ -1,5 +1,11 @@
 package html.document.maker;
 
+import document.Document;
+import document.elements.Element;
+import document.elements.types.*;
+import java.awt.Toolkit;
+import java.awt.datatransfer.*;
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -8,7 +14,24 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    public static void main(String[] args)  {
+    private static void copyToClipboard(String text) {
+        StringSelection stringSelection = new StringSelection(text);
+        Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clpbrd.setContents(stringSelection, null);
+    }
+
+    public static void main(String[] args) {
+
+        Document doc = new Document();
+        Element text = new Text();
+        text.setText("This is a test page");
+        Element text2 = new Text();
+        text2.setText("This is a test of line break");
+        doc.getBody().appendChild(text);
+        doc.getBody().appendChild(new Break());
+        doc.getBody().appendChild(text2);
+
+        copyToClipboard(doc.toString());
 
 //        DoubleTagElement document = new DoubleTagElement(ElementType.HTML);
 //        DoubleTagElement head = new DoubleTagElement(ElementType.HEAD);
@@ -37,8 +60,6 @@ public class Main {
 //        } catch (UnsupportedEncodingException ex) {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-
-
     }
 
 }

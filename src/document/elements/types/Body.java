@@ -1,8 +1,10 @@
-package document.elements;
+package document.elements.types;
+
+import document.elements.DoubleTagElement;
 
 public class Body extends DoubleTagElement {
 
-    private static final String TAG_NAME = "body";
+    public static final String TAG_NAME = "body";
 
     @Override
     public String getTagName() {
