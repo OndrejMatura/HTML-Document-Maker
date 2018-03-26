@@ -26,4 +26,11 @@ public class Text extends SingleTagElement {
         return text;
     }
 
+    public Text() {
+    }
+
+    public Text(String text) {
+        this.text = text;
+    }
+
 }

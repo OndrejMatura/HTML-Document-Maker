@@ -1,6 +1,6 @@
 package html.document.maker;
 
-import document.Document;
+import document.HTMLDocuement;
 import document.elements.Element;
 import document.elements.types.*;
 import java.awt.Toolkit;
@@ -22,7 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Document doc = new Document();
+        HTMLDocuement doc = new HTMLDocuement();
         Element text = new Text();
         text.setText("This is a test page");
         Element text2 = new Text();

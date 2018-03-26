@@ -32,17 +32,19 @@ public class Html extends DoubleTagElement {
         return TAG_NAME;
     }
 
-    @Override
-    public Children getChildren() {
-        Children children = new Children();
-        children.add(head);
-        children.add(body);
-        return children;
-    }
+//    @Override
+//    public Children getChildren() {
+//        Children children = new Children();
+//        children.add(head);
+//        children.add(body);
+//        return children;
+//    }
     
     public Html() {
         head = new Head();
         body = new Body();
+        appendChild(head);
+        appendChild(body);
     }
 
 }
