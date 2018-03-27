@@ -16,47 +16,72 @@ public abstract class DoubleTagElement extends Element {
     }
 
     @Override
-    public void removeChildren() {
+    public void removeChild(int index) {
+        children.get(index).removeParent();
+        children.remove(index);
+    }
+
+    @Override
+    public void clearChildren() {
+        for (Element child : children) {
+            child.setParent(null);
+        }
         children.clear();
     }
 
     @Override
-    public Children getChildren() {
-        return children;
+    public void switchChildren(int index1, int index2) {
+        Element temp = children.get(index1);
+        children.set(index1, children.get(index2));
+        children.set(index2, temp);
     }
 
     @Override
-    public Element getChild(int index) {
+    public Element[] children() {
+        return children.toArray(new Element[0]);
+    }
+
+    ;
+    
+    @Override
+    public Element children(int index) {
         return children.get(index);
-    };
+    }
+
+    ;
+    
+    @Override
+    public boolean hasChildren() {
+        return children.isEmpty();
+    }
 
     @Override
     public int childrenCount() {
         return children.size();
     }
 
-    public String getOpeningTag() {
+    public String openingTag() {
         return String.format(OPENING_TAG, getTagName());
     }
 
-    public String getClosingTag() {
+    public String closingTag() {
         return String.format(CLOSING_TAG, getTagName());
     }
 
     @Override
     public String toString() {
-        String string = getOpeningTag();
-        for (Element element : getChildren()) {
-            string += element.toString();
+        String string = openingTag();
+        for (Element element : children) {
+            string += element;
         }
-        string += getClosingTag();
+        string += closingTag();
         return string;
     }
 
     public DoubleTagElement() {
         children = new Children();
     }
-    
+
     public DoubleTagElement(Element... elements) {
         this();
         children.addAll(Arrays.asList(elements));

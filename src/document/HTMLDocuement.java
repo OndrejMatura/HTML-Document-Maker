@@ -3,11 +3,10 @@ package document;
 import document.elements.Element;
 import document.elements.types.*;
 
-public class HTMLDocuement extends Html{
+public class HTMLDocuement extends Html {
 
     public static final String DOCTYPE = "<!DOCTYPE HTML>";
-    
-    
+
 //
 //    private final Element html;
 //    private final Element head;
@@ -36,5 +35,4 @@ public class HTMLDocuement extends Html{
 //    public String toString() {
 //        return DOCTYPE + html.toString();
 //    }
-
 }

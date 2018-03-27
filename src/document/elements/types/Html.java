@@ -17,11 +17,11 @@ public class Html extends DoubleTagElement {
     }
 
     public Element getHead() {
-        return getChild(HEAD_INDEX);
+        return children(HEAD_INDEX);
     }
 
     public Element getBody() {
-        return getChild(BODY_INDEX);
+        return children(BODY_INDEX);
     }
     
     protected Html() {
