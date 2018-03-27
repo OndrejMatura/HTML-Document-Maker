@@ -1,5 +1,7 @@
 package document.elements;
 
+import java.util.Arrays;
+
 public abstract class DoubleTagElement extends Element {
 
     private static final String OPENING_TAG = "<%s>";
@@ -22,6 +24,11 @@ public abstract class DoubleTagElement extends Element {
     public Children getChildren() {
         return children;
     }
+
+    @Override
+    public Element getChild(int index) {
+        return children.get(index);
+    };
 
     @Override
     public int childrenCount() {
@@ -48,6 +55,11 @@ public abstract class DoubleTagElement extends Element {
 
     public DoubleTagElement() {
         children = new Children();
+    }
+    
+    public DoubleTagElement(Element... elements) {
+        this();
+        children.addAll(Arrays.asList(elements));
     }
 
 }

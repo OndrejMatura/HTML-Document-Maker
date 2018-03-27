@@ -11,4 +11,7 @@ public class Body extends DoubleTagElement {
         return TAG_NAME;
     }
 
+    protected Body() {
+    }
+
 }

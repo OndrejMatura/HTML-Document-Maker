@@ -25,10 +25,13 @@ public abstract class Element {
     public abstract int childrenCount();
 
     public abstract Children getChildren();
+    
+    public abstract Element getChild(int index);
 
     @Override
     public abstract String toString();
 
     public abstract String getTagName();
+    
 
 }

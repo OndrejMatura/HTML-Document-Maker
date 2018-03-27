@@ -18,6 +18,11 @@ public abstract class SingleTagElement extends Element {
     }
     
     @Override
+    public Element getChild(int index) {
+        return this;
+    }
+    
+    @Override
     public int childrenCount() {
         return 0;
     }

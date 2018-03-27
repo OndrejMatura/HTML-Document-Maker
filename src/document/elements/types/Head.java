@@ -10,5 +10,8 @@ public class Head extends DoubleTagElement {
     public String getTagName() {
         return TAG_NAME;
     }
+    
+    protected Head() {
+    }
 
 }
