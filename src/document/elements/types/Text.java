@@ -23,7 +23,7 @@ public class Text extends SingleTagElement {
 
     @Override
     public String toString() {
-        return text;
+        return text + " ";
     }
 
     public Text() {

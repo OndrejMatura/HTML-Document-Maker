@@ -2,14 +2,16 @@ package document.elements;
 
 public abstract class SingleTagElement extends Element {
 
-    private static final String TAG = "<%s/>";
-
     @Override
     public void appendChild(Element element) {
     }
 
     @Override
     public void removeChild(int index) {
+    }
+    
+    @Override
+    public void removeChild(Element element) {
     }
 
     @Override

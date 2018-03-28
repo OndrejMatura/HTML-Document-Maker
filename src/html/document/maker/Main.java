@@ -1,6 +1,7 @@
 package html.document.maker;
 
 import document.HTMLDocuement;
+import document.elements.DoubleTagElement;
 import document.elements.Element;
 import document.elements.types.*;
 import java.awt.Toolkit;
@@ -30,8 +31,9 @@ public class Main {
         doc.getBody().appendChild(text);
         doc.getBody().appendChild(new Break());
         doc.getBody().appendChild(text2);
-
-        copyToClipboard(doc.toString());
+        System.out.println(text.getClass().getSimpleName());
+        System.out.println(doc);
+        //copyToClipboard(doc.toString());
 
 //        DoubleTagElement document = new DoubleTagElement(ElementType.HTML);
 //        DoubleTagElement head = new DoubleTagElement(ElementType.HEAD);

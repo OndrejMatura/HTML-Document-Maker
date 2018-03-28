@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public abstract class DoubleTagElement extends Element {
 
-    private static final String OPENING_TAG = "<%s>";
-    private static final String CLOSING_TAG = "</%s>";
-
     private final Children children;
 
     @Override
@@ -19,6 +16,12 @@ public abstract class DoubleTagElement extends Element {
     public void removeChild(int index) {
         children.get(index).removeParent();
         children.remove(index);
+    }
+
+    @Override
+    public void removeChild(Element element) {
+        element.removeParent();
+        children.remove(element);
     }
 
     @Override

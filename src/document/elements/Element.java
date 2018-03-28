@@ -2,6 +2,10 @@ package document.elements;
 
 public abstract class Element {
 
+    protected static final String TAG = "<%s/>";
+    protected static final String OPENING_TAG = "<%s>";
+    protected static final String CLOSING_TAG = "</%s>";
+
     private Element parent;
 
     public Element getParent() {
@@ -34,8 +38,8 @@ public abstract class Element {
 
     public abstract void removeChild(int index);
 
-    //TODO
-    //public abstract void removeChild(Element element);
+    public abstract void removeChild(Element element);
+
     public abstract void switchChildren(int index1, int index2);
 
     public abstract void clearChildren();
