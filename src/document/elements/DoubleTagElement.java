@@ -43,15 +43,11 @@ public abstract class DoubleTagElement extends Element {
     public Element[] children() {
         return children.toArray(new Element[0]);
     }
-
-    ;
     
     @Override
     public Element children(int index) {
         return children.get(index);
     }
-
-    ;
     
     @Override
     public boolean hasChildren() {

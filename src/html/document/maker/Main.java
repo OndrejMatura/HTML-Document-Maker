@@ -33,6 +33,8 @@ public class Main {
         doc.getBody().appendChild(text2);
         System.out.println(text.getClass().getSimpleName());
         System.out.println(doc);
+        
+        
         //copyToClipboard(doc.toString());
 
 //        DoubleTagElement document = new DoubleTagElement(ElementType.HTML);
