@@ -7,7 +7,7 @@ public class Break extends SingleTagElement {
     public static final String TAG_NAME = "br";
 
     @Override
-    public String getTagName() {
+    public String tagName() {
         return TAG_NAME;
     }
 

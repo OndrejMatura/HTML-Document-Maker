@@ -28,10 +28,10 @@ public class Main {
         text.setText("This is a test page");
         Element text2 = new Text();
         text2.setText("This is a test of line break");
-        doc.getBody().appendChild(text);
-        doc.getBody().appendChild(new Break());
-        doc.getBody().appendChild(text2);
-        System.out.println(text.getClass().getSimpleName());
+        doc.body().children().append(text);
+        doc.body().children().append(new Break());
+        doc.body().children().append(text2);
+
         System.out.println(doc);
         //copyToClipboard(doc.toString());
 

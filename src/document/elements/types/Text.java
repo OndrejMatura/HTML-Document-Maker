@@ -12,12 +12,7 @@ public class Text extends SingleTagElement {
     }
 
     @Override
-    public void appendText(String text) {
-        this.text += text;
-    }
-
-    @Override
-    public String getTagName() {
+    public String tagName() {
         return "";
     }
 

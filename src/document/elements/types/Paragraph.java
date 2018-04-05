@@ -7,7 +7,7 @@ public class Paragraph extends DoubleTagElement {
     public static final String TAG_NAME = "p";
 
     @Override
-    public String getTagName() {
+    public String tagName() {
         return TAG_NAME;
     }
 

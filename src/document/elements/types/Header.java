@@ -11,7 +11,7 @@ public class Header extends DoubleTagElement {
     private final int tier;
     
     @Override
-    public String getTagName() {
+    public String tagName() {
         return TAG_NAME + tier;
     }
     

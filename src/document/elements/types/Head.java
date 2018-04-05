@@ -7,7 +7,7 @@ public class Head extends DoubleTagElement {
     public static final String TAG_NAME = "head";
 
     @Override
-    public String getTagName() {
+    public String tagName() {
         return TAG_NAME;
     }
 
