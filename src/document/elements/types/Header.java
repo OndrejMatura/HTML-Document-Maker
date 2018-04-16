@@ -1,6 +1,7 @@
 package document.elements.types;
 
 import document.elements.DoubleTagElement;
+import document.elements.Element;
 
 public class Header extends DoubleTagElement {
 
@@ -15,7 +16,8 @@ public class Header extends DoubleTagElement {
         return TAG_NAME + tier;
     }
     
-    public Header(int tier) {
+    public Header(int tier, Element... elements) {
+        super(elements);
         if (tier < MIN_TIER) {
             this.tier = MIN_TIER;
         } else if (tier > MAX_TIER) {
@@ -24,5 +26,7 @@ public class Header extends DoubleTagElement {
             this.tier = tier;
         }
     }
+    
+    
 
 }

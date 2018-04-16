@@ -36,9 +36,17 @@ public abstract class DoubleTagElement extends Element {
         string += closingTag();
         return string;
     }
+    
+    protected DoubleTagElement(boolean children) {
+        if (children) {
+            this.children = new Children();
+        } else {
+            this.children = null;
+        }
+    }
 
     public DoubleTagElement() {
-        children = new Children();
+        this(true);
     }
 
     public DoubleTagElement(Element... elements) {

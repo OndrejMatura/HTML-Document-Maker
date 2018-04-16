@@ -8,24 +8,35 @@ public class Html extends DoubleTagElement {
 
     public static final String TAG_NAME = "html";
 
-    private static final int HEAD_INDEX = 0;
-    private static final int BODY_INDEX = 1;
-
+    private final Element head, body;
+    
     @Override
     public String tagName() {
         return TAG_NAME;
     }
 
+    @Override
+    public Children children() {
+        return null;
+    }
+    
+    @Override
+    public String toString() {
+        return openingTag() + head.toString() + body.toString() + closingTag();
+    }
+    
     public Element head() {
-        return children().get(HEAD_INDEX);
+        return head;
     }
 
     public Element body() {
-        return children().get(BODY_INDEX);
+        return body;
     }
 
     protected Html() {
-        super(new Head(), new Body());
+        super(false);
+        head = new Head();
+        body = new Body();
     }
 
 }

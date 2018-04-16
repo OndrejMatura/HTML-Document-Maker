@@ -18,10 +18,7 @@ public class Text extends SingleTagElement {
 
     @Override
     public String toString() {
-        return text + " ";
-    }
-
-    public Text() {
+        return text;
     }
 
     public Text(String text) {

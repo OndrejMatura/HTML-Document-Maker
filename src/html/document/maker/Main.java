@@ -6,7 +6,7 @@ import document.elements.Element;
 import document.elements.types.*;
 import java.awt.Toolkit;
 import java.awt.datatransfer.*;
-
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -15,24 +15,29 @@ import java.util.logging.Logger;
 
 public class Main {
 
+    private static String DESKTOP_PATH = "C:\\Users\\Ondra\\Desktop\\";
+    
     private static void copyToClipboard(String text) {
         StringSelection stringSelection = new StringSelection(text);
         Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
         clpbrd.setContents(stringSelection, null);
     }
+    
+    private static void toFile(HTMLDocuement doc) throws IOException {
+        File file = new File(DESKTOP_PATH + doc.getName() + ".html");
+        FileWriter fileWriter = new FileWriter(file);
+        fileWriter.write(doc.toString());
+        fileWriter.close();
+    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        HTMLDocuement doc = new HTMLDocuement();
-        Element text = new Text();
-        text.setText("This is a test page");
-        Element text2 = new Text();
-        text2.setText("This is a test of line break");
-        doc.body().children().append(text);
-        doc.body().children().append(new Break());
-        doc.body().children().append(text2);
+        HTMLDocuement doc = new HTMLDocuement("wololo");
+        doc.head().children().append(new Title(new Text("titl")));
+        doc.body().children().append(new Header(2, new Text("Header")), new Paragraph(new Text("hojhojhoj na ted bude linebreak"), new Break(), new Text("ojojojo tady je hehe")));
 
-        System.out.println(doc);
+        //System.out.println(doc);
+        toFile(doc);
         
         
         //copyToClipboard(doc.toString());
