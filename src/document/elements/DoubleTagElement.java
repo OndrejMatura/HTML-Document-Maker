@@ -1,5 +1,8 @@
 package document.elements;
 
+import java.util.Iterator;
+import java.util.function.Consumer;
+
 public abstract class DoubleTagElement extends Element {
 
     private final Children children;
@@ -20,7 +23,7 @@ public abstract class DoubleTagElement extends Element {
     }
 
     public String openingTag() {
-        return String.format(OPENING_TAG, tagName());
+        return String.format(OPENING_TAG, tagName(), getAttributes());
     }
 
     public String closingTag() {
@@ -29,14 +32,9 @@ public abstract class DoubleTagElement extends Element {
 
     @Override
     public String toString() {
-        String string = openingTag();
-        for (int i = 0; i < childrenCount(); i++) {
-            string += children().get(i);
-        }
-        string += closingTag();
-        return string;
+        return openingTag() + children + closingTag();
     }
-    
+
     protected DoubleTagElement(boolean children) {
         if (children) {
             this.children = new Children();

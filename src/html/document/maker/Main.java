@@ -15,14 +15,14 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private static String DESKTOP_PATH = "C:\\Users\\Ondra\\Desktop\\";
-    
+    private static final String DESKTOP_PATH = "C:\\Users\\Ondra\\Desktop\\";
+
     private static void copyToClipboard(String text) {
         StringSelection stringSelection = new StringSelection(text);
         Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
         clpbrd.setContents(stringSelection, null);
     }
-    
+
     private static void toFile(HTMLDocuement doc) throws IOException {
         File file = new File(DESKTOP_PATH + doc.getName() + ".html");
         FileWriter fileWriter = new FileWriter(file);
@@ -34,14 +34,21 @@ public class Main {
 
         HTMLDocuement doc = new HTMLDocuement("wololo");
         doc.head().children().append(new Title(new Text("titl")));
-        doc.body().children().append(new Header(2, new Text("Header")), new Paragraph(new Text("hojhojhoj na ted bude linebreak"), new Break(), new Text("ojojojo tady je hehe")));
+        doc.body().children().append(
+                new Header(2, new Text("Header")),
+                new Paragraph(
+                        new Text("hojhojhoj na ted bude linebreak"),
+                        new Break(),
+                        new Text("ojojojo tady je hehe")
+                )
+        );
+        doc.body().setClassAttribute("background-color: red");
+        doc.body().setIdAttribute("killMe");
 
-        //System.out.println(doc);
+        System.out.println(doc);
         toFile(doc);
-        
-        
-        //copyToClipboard(doc.toString());
 
+        //copyToClipboard(doc.toString());
 //        DoubleTagElement document = new DoubleTagElement(ElementType.HTML);
 //        DoubleTagElement head = new DoubleTagElement(ElementType.HEAD);
 //        DoubleTagElement title = new DoubleTagElement(ElementType.TITLE, "TEST");

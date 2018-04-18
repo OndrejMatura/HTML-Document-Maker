@@ -4,12 +4,7 @@ import document.elements.SingleTagElement;
 
 public class Text extends SingleTagElement {
 
-    private String text;
-
-    @Override
-    public void setText(String text) {
-        this.text = text;
-    }
+    private final String text;
 
     @Override
     public String tagName() {

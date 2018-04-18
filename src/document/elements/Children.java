@@ -2,8 +2,9 @@ package document.elements;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
-public class Children {
+public class Children implements Iterable<Element> {
 
     private final ArrayList<Element> children;
 
@@ -59,6 +60,20 @@ public class Children {
 
     public Children() {
         children = new ArrayList<>();
+    }
+    
+    @Override
+    public String toString() {
+        String string = "";
+        for(Element child: children) {
+            string += child;
+        }
+        return string;
+    }
+
+    @Override
+    public Iterator<Element> iterator() {
+        return children.iterator();
     }
 
 }

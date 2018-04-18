@@ -19,7 +19,7 @@ public abstract class SingleTagElement extends Element {
 
     @Override
     public String toString() {
-        return String.format(TAG, tagName());
+        return String.format(TAG, tagName(), getAttributes());
     }
 
 }
